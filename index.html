@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Чамд зориулсан урилга 💗</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Арын чимэглэл -->
+    <div class="doodle heart one">♥</div>
+    <div class="doodle heart two">♡</div>
+    <div class="doodle star one">✦</div>
+    <div class="doodle star two">★</div>
+    <div class="doodle flower">✿</div>
+
+    <!-- ======================================
+         1. ЭХНИЙ УРИЛГА
+    ======================================= -->
+
+    <main id="invitePage" class="page active">
+      <div class="card invite-card">
+        <div class="top-heart">💗</div>
+
+        <p class="small-title">Чамд нэг жижигхэн асуулт байна...</p>
+
+        <h1>
+          Надтай хамт<br />
+          <span>болзоонд явах уу?</span>
+        </h1>
+
+        <p class="description">
+          Чамтай хамт сайхан дурсамж бүтээмээр байна. 🌸
+        </p>
+
+        <div class="buttons">
+          <button id="yesBtn" class="yes-btn">ТИЙМ 💖</button>
+
+          <button id="noBtn" class="no-btn">ҮГҮЙ 😏</button>
+        </div>
+
+        <p id="hint" class="hint">Сонголтоо хийгээрэй 😊</p>
+      </div>
+    </main>
+
+    <!-- ======================================
+         2. БОЛЗООНЫ ТӨРӨЛ
+    ======================================= -->
+
+    <section id="typePage" class="page">
+      <div class="card">
+        <div class="step">1 / 5</div>
+
+        <h2>💗 Ямар болзоо хийх вэ?</h2>
+
+        <p class="subtext">Өөрт таалагдсан нэгийг сонгоорой.</p>
+
+        <div class="choice-grid">
+          <button class="choice" data-type="☕ Кофе уух">
+            ☕
+            <span>Кофе уух</span>
+          </button>
+
+          <button class="choice" data-type="🎬 Кино үзэх">
+            🎬
+            <span>Кино үзэх</span>
+          </button>
+
+          <button class="choice" data-type="🌳 Салхилах">
+            🌳
+            <span>Салхилах</span>
+          </button>
+
+          <button class="choice" data-type="🍕 Хоол идэх">
+            🍕
+            <span>Хоол идэх</span>
+          </button>
+
+          <button class="choice" data-type="🎮 Тоглоом тоглох">
+            🎮
+            <span>Тоглоом тоглох</span>
+          </button>
+
+          <button class="choice" data-type="🌅 Нар жаргахыг харах">
+            🌅
+            <span>Нар жаргах</span>
+          </button>
+        </div>
+
+        <button class="next-btn" id="typeNext" disabled>Дараах →</button>
+      </div>
+    </section>
+
+    <!-- ======================================
+         3. ӨДӨР
+    ======================================= -->
+
+    <section id="datePage" class="page">
+      <div class="card">
+        <div class="step">2 / 5</div>
+
+        <h2>📅 Өдрөө сонгоорой</h2>
+
+        <p class="subtext">Хэзээ уулзахад тохиромжтой вэ?</p>
+
+        <input type="date" id="dateInput" class="date-input" />
+
+        <p id="selectedDate" class="selected">Өдөр сонгоогүй байна.</p>
+
+        <div class="navigation">
+          <button class="back-btn" onclick="showPage('typePage')">
+            ← Буцах
+          </button>
+
+          <button id="dateNext" class="next-btn" disabled>Дараах →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         4. ЦАГ
+    ======================================= -->
+
+    <section id="timePage" class="page">
+      <div class="card">
+        <div class="step">3 / 5</div>
+
+        <h2>🕐 Цагаа сонгоорой</h2>
+
+        <p class="subtext">Хэдэн цагт уулзах вэ?</p>
+
+        <div class="time-grid">
+          <button class="time-btn">13:00</button>
+
+          <button class="time-btn">14:00</button>
+
+          <button class="time-btn">15:00</button>
+
+          <button class="time-btn">16:00</button>
+
+          <button class="time-btn">17:00</button>
+
+          <button class="time-btn">18:00</button>
+
+          <button class="time-btn">19:00</button>
+
+          <button class="time-btn">20:00</button>
+        </div>
+
+        <p id="selectedTime" class="selected">Цаг сонгоогүй байна.</p>
+
+        <div class="navigation">
+          <button class="back-btn" onclick="showPage('datePage')">
+            ← Буцах
+          </button>
+
+          <button id="timeNext" class="next-btn" disabled>Дараах →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         5. ГАЗАР
+    ======================================= -->
+
+    <section id="placePage" class="page">
+      <div class="card">
+        <div class="step">4 / 5</div>
+
+        <h2>📍 Хаана уулзах вэ?</h2>
+
+        <p class="subtext">Өөрт таалагдсан газраа сонгоорой.</p>
+
+        <div class="place-grid">
+          <button class="place-btn">
+            ☕
+            <span>Кофе шоп</span>
+          </button>
+
+          <button class="place-btn">
+            🌳
+            <span>Парк</span>
+          </button>
+
+          <button class="place-btn">
+            🎬
+            <span>Кино театр</span>
+          </button>
+
+          <button class="place-btn">
+            🍕
+            <span>Ресторан</span>
+          </button>
+        </div>
+
+        <div class="custom-place">
+          <label for="customPlace"> 📍 Өөр газар сонгох: </label>
+
+          <input
+            type="text"
+            id="customPlace"
+            placeholder="Газрын нэрийг бичээрэй..."
+          />
+        </div>
+
+        <p id="selectedPlace" class="selected">Газар сонгоогүй байна.</p>
+
+        <div class="navigation">
+          <button class="back-btn" onclick="showPage('timePage')">
+            ← Буцах
+          </button>
+
+          <button id="placeNext" class="next-btn" disabled>Дараах →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         6. МЕССЕЖ
+    ======================================= -->
+
+    <section id="messagePage" class="page">
+      <div class="card">
+        <div class="step">5 / 5</div>
+
+        <h2>💌 Нэмэлт зүйл хэлэх үү?</h2>
+
+        <p class="subtext">Хэрвээ хүсвэл надад жижигхэн мессеж үлдээгээрэй.</p>
+
+        <textarea
+          id="messageInput"
+          placeholder="Энд мессежээ бичээрэй..."
+        ></textarea>
+
+        <div class="navigation">
+          <button class="back-btn" onclick="showPage('placePage')">
+            ← Буцах
+          </button>
+
+          <button id="reviewBtn" class="next-btn">Сонголтоо шалгах →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         7. БҮХ СОНГОЛТ
+    ======================================= -->
+
+    <section id="reviewPage" class="page">
+      <div class="card">
+        <div class="top-heart">💗</div>
+
+        <h2>Бидний болзооны төлөвлөгөө</h2>
+
+        <p class="subtext">Бүх зүйл зөв эсэхийг шалгаарай.</p>
+
+        <div class="summary">
+          <div class="summary-item">
+            <span>💕 Болзоо</span>
+            <strong id="summaryType"> </strong>
+          </div>
+
+          <div class="summary-item">
+            <span>📅 Өдөр</span>
+            <strong id="summaryDate"> </strong>
+          </div>
+
+          <div class="summary-item">
+            <span>🕐 Цаг</span>
+            <strong id="summaryTime"> </strong>
+          </div>
+
+          <div class="summary-item">
+            <span>📍 Газар</span>
+            <strong id="summaryPlace"> </strong>
+          </div>
+
+          <div class="summary-item">
+            <span>💌 Мессеж</span>
+            <strong id="summaryMessage"> </strong>
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button class="back-btn" onclick="showPage('messagePage')">
+            ← Засах
+          </button>
+
+          <button id="confirmBtn" class="confirm-btn">
+            💖 Болзоогоо баталгаажуулах
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================
+         8. АМЖИЛТ
+    ======================================= -->
+
+    <section id="successPage" class="page">
+      <div class="card success-card">
+        <div class="big-heart">💗</div>
+
+        <h1>БОЛЗОО БАТАЛГААЖЛАА! 🎉</h1>
+
+        <p class="success-text">Тэгвэл хамтдаа сайхан дурсамж бүтээцгээе. 🌸</p>
+
+        <div class="final-date">
+          <p>📅 <span id="finalDate"></span></p>
+
+          <p>🕐 <span id="finalTime"></span></p>
+
+          <p>📍 <span id="finalPlace"></span></p>
+
+          <p>💕 <span id="finalType"></span></p>
+        </div>
+
+        <div class="countdown-box">
+          <h3>⏳ Болзоонд үлдсэн хугацаа</h3>
+
+          <div id="countdown">Тооцоолж байна...</div>
+        </div>
+
+        <p id="finalMessage" class="final-message"></p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
